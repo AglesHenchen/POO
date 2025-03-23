@@ -71,6 +71,8 @@ public class Questao07 extends BaseQuestao {
 
             if (parcelas < 3 || parcelas > 10) {
                 System.out.println("Número de parcelas inválido.\n");
+                exibirOpcoesDePagamento(valorTotal);
+                return;
             } else {
                 double juros = 0.03 * parcelas;
                 double valorComJuros = valorTotal + (valorTotal * juros);
@@ -80,9 +82,9 @@ public class Questao07 extends BaseQuestao {
                 System.out.printf("Valor das parcelas: R$ %.2f cada\n", parcelaComJuros);
                 return;
             }
-
         } else {
-            System.out.println("A compra deve ser acima de R$ 100,00 para pagamento com juros.");
+            System.out.println("A compra deve ser acima de R$ 100,00 para pagamento com juros.\n");
+            exibirOpcoesDePagamento(valorTotal);
         }
     }
 
